@@ -8,6 +8,7 @@ import (
 	u "../utils"
 )
 
+// CreateContact ...
 var CreateContact = func(w http.ResponseWriter, r *http.Request) {
 
 	user := r.Context().Value("user").(uint) //Grab the id of the user that send the request
@@ -19,11 +20,12 @@ var CreateContact = func(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	contact.UserId = user
+	contact.UserID = user
 	resp := contact.Create()
 	u.Respond(w, resp)
 }
 
+// GetContactsFor ...
 var GetContactsFor = func(w http.ResponseWriter, r *http.Request) {
 	id := r.Context().Value("user").(uint)
 	data := models.GetContacts(id)

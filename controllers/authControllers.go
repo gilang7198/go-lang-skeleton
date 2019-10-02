@@ -8,6 +8,7 @@ import (
 	u "../utils"
 )
 
+// CreateAccount ...
 var CreateAccount = func(w http.ResponseWriter, r *http.Request) {
 
 	account := &models.Account{}
@@ -21,6 +22,7 @@ var CreateAccount = func(w http.ResponseWriter, r *http.Request) {
 	u.Respond(w, resp)
 }
 
+// Authenticate ...
 var Authenticate = func(w http.ResponseWriter, r *http.Request) {
 
 	account := &models.Account{}
@@ -34,6 +36,7 @@ var Authenticate = func(w http.ResponseWriter, r *http.Request) {
 	u.Respond(w, resp)
 }
 
+// GetAllAccount ...
 var GetAllAccount = func(w http.ResponseWriter, r *http.Request) {
 
 	account := &models.Account{}
